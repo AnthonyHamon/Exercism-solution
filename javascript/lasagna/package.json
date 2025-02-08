@@ -30,5 +30,6 @@
     "watch": "corepack pnpm jest --watch",
     "format": "corepack pnpm prettier -w ."
   },
-  "packageManager": "pnpm@9.15.2"
+  "packageManager": "pnpm@9.15.2",
+  "type": "module"
 }
