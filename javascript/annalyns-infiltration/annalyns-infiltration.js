@@ -27,7 +27,8 @@
  * @return {boolean} Whether or not you can execute a fast attack.
  */
 export function canExecuteFastAttack(knightIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  if (knightIsAwake === true) return false
+  else return true
 }
 
 /**
@@ -40,7 +41,8 @@ export function canExecuteFastAttack(knightIsAwake) {
  * @returns {boolean} Whether or not you can spy on someone.
  */
 export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  if (knightIsAwake === true || archerIsAwake === true || prisonerIsAwake === true) return true
+  return false
 }
 
 /**
@@ -52,7 +54,10 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
  * @returns {boolean} Whether or not you can send a signal to the prisoner.
  */
 export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  if (archerIsAwake === true && prisonerIsAwake === false) return false;
+  if (archerIsAwake === false && prisonerIsAwake === true) return true;
+  if (archerIsAwake === false && prisonerIsAwake === false) return false;
+  return false;
 }
 
 /**
@@ -71,5 +76,17 @@ export function canFreePrisoner(
   prisonerIsAwake,
   petDogIsPresent,
 ) {
-  throw new Error('Remove this line and implement the function');
+if (petDogIsPresent === true && archerIsAwake === false) return true;
+if (petDogIsPresent === true && archerIsAwake === true) return false;
+if(petDogIsPresent === false){
+  if (archerIsAwake === false && knightIsAwake === false && prisonerIsAwake === false) return false;
+  if (archerIsAwake === false && knightIsAwake === false && prisonerIsAwake === true) return true;
+  if (archerIsAwake === false && knightIsAwake === true && prisonerIsAwake === false) return false;
+  if (archerIsAwake === false && knightIsAwake === true && prisonerIsAwake === true) return false;
+  if (archerIsAwake === true && knightIsAwake === false && prisonerIsAwake === false) return false;
+  if (archerIsAwake === true && knightIsAwake === false && prisonerIsAwake === true) return false;
+  if (archerIsAwake === true && knightIsAwake === true && prisonerIsAwake === false) return false;
+  if (archerIsAwake === true && knightIsAwake === true && prisonerIsAwake === true) return false;
+}
+return false
 }
