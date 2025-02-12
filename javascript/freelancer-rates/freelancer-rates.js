@@ -50,14 +50,17 @@ export function daysInBudget(budget, ratePerHour) {
  */
 export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
  const dayInMonth = 22;
+ const realDiscount = 1 - discount;
  const monthWorked = Math.floor(numDays / dayInMonth);
- let daylyRate = dayRate(ratePerHour);
- let monthToPay = monthWorked * daylyRate;
+ let fullHoursWorkedInMonth = numDays - (numDays % dayInMonth);
+ let fullMonthToPay = fullHoursWorkedInMonth * dayRate(ratePerHour);
+ let dayLeft = numDays % dayInMonth;
+ let dayLeftToPay = dayLeft * dayRate(ratePerHour);
  let fullPrice = 0
- if(monthWorked > 0){
-  fullPrice = (monthToPay * discount) + daylyRate;
+ if(monthWorked > 0 && discount !== 0){
+  fullPrice = (fullMonthToPay * realDiscount) + dayLeftToPay;
   return Math.ceil(fullPrice);
  }else{
-  return Math.ceil(numDays * daylyRate);
+  return Math.ceil(numDays * dayRate(ratePerHour));
  }
 }
