@@ -14,7 +14,7 @@ function testFunctions(){
     console.log(calculateResellPrice(20000, 1));
     console.log(calculateResellPrice(20000, 2.5));
     console.log(calculateResellPrice(20000, 5));
-    console.log(calculateResellPrice(20000, 10));
+    console.log(calculateResellPrice(25000, 10));
 
 }
 
