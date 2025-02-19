@@ -4,6 +4,7 @@
 // the @ts-check directive. It will give you helpful autocompletion when
 // implementing this exercise.
 
+
 /**
  * Calculates the total bird count.
  *
@@ -11,7 +12,11 @@
  * @returns {number} total bird count
  */
 export function totalBirdCount(birdsPerDay) {
-  throw new Error('Please implement the totalBirdCount function');
+  let totalOfBirds = 0;
+birdsPerDay.forEach(bird => {
+  totalOfBirds = totalOfBirds + bird
+});
+  return totalOfBirds;
 }
 
 /**
