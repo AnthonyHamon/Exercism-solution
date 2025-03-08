@@ -1,6 +1,6 @@
-import { limesToCut, timeToMixJuice } from "./mixed-juices.js"; 
+import { limesToCut, remainingOrders, timeToMixJuice } from "./mixed-juices.js"; 
 
-const choosenJuice = 'Pure Strawberry Joy';
+const choosenJuice = 'Energizer';
 
 const limes = [
     'small',
@@ -12,13 +12,22 @@ const limes = [
     'large',
   ];
 
+  const orders = [
+    'Tropical Island',
+    'Energizer',
+    'Limetime',
+    'All or Nothing',
+    'Pure Strawberry Joy',
+  ];
+
 
 function testFunction(){
     console.log(timeToMixJuice(choosenJuice));
-    console.log(limesToCut(42, limes));
-    console.log(limesToCut(80, limes));
-    console.log(limesToCut(0, limes));
-    console.log(limesToCut(0, []));
+    // console.log(limesToCut(42, limes));
+    // console.log(limesToCut(80, limes));
+    // console.log(limesToCut(0, limes));
+    // console.log(limesToCut(0, []));
+    // console.log(remainingOrders(7, orders));
 }
 
-testFunction()
+testFunction();
