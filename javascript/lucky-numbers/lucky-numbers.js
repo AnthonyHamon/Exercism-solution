@@ -7,8 +7,8 @@
  * @param {number[]} array2
  * @returns {number} sum of the two arrays
  */
-export function twoSum(array1, array2) {
-  throw new Error('Implement the twoSum function');
+export function twoSum(array1, array2) { 
+   return  Number(array1.join('')) + Number(array2.join(''));
 }
 
 /**
