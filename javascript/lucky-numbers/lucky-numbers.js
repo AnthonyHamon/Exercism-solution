@@ -30,5 +30,6 @@ export function luckyNumber(value) {
  * @returns {string} error message
  */
 export function errorMessage(input) {
+  console.log(input);
   throw new Error('Implement the errorMessage function');
 }
